@@ -1,0 +1,12 @@
+pandas
+seaborn
+nltk
+spacy
+keras
+tf-keras
+tensorflow
+scikit-learn
+fasttext
+numpy
+sentence_transformers
+pytest

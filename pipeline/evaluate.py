@@ -7,7 +7,7 @@ def evaluate(X_test,y_test):
     folder_path = Path('./models')
     for file_path in folder_path.glob('*.joblib') :
 
-        model = joblib.load('models/linear_regression.joblib')
+        model = joblib.load('c:\\Users\\msi\\Documents\\End_to_end_nlp\\models\\logistic_regression.joblib')
         y_pred=model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
         precision = precision_score(y_test, y_pred)

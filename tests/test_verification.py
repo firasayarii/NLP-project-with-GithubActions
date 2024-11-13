@@ -3,9 +3,9 @@ import numpy as np
 import os
 import pytest
 
-X_test = np.load(os.path.join('c:\\Users\\msi\\Documents\\End_to_end_nlp\\data', 'X_test.npy'),allow_pickle=True)
+X_test = np.load('c:\\Users\\msi\\Documents\\End_to_end_nlp\\data\\X_test.npy',allow_pickle=True)
 X_test = X_test.tolist().toarray()
-y_test = np.load(os.path.join('c:\\Users\\msi\\Documents\\End_to_end_nlp\\data', 'y_test.npy'),allow_pickle=True)
+y_test = np.load('c:\\Users\\msi\\Documents\\End_to_end_nlp\\data\\y_test.npy',allow_pickle=True)
 def test_performance():
 
     accuracy , precision , recall , F1_score=evaluate(X_test,y_test)

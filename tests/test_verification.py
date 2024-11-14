@@ -4,17 +4,20 @@ import numpy as np
 import pytest
 from pipeline.evaluate import evaluate
 
-# Fonction pour obtenir le chemin absolu du répertoire courant
-def get_data_path(filename):
-    # Résout le chemin relatif par rapport au répertoire courant (projet racine)
-    project_root = os.path.dirname(os.path.abspath(__file__))  # Répertoire courant du script
-    data_path = os.path.join(project_root, 'data', filename)  # Ajoute le chemin du fichier
-    return data_path
 
-# Charger les données
-X_test = np.load(get_data_path('X_test.npy'), allow_pickle=True)
+
+base_dir = os.path.abspath(os.path.dirname(__file__))  # Dossier actuel
+data_dir = os.path.join(base_dir, '..', 'data')  # Accéder au dossier data
+X_test_path = os.path.join(data_dir, 'X_test.npy')
+y_test_path = os.path.join(data_dir, 'y_test.npy')
+
+# Charger les fichiers
+X_test = np.load(X_test_path, allow_pickle=True)
+y_test = np.load(y_test_path, allow_pickle=True)
+
+# Transformation (si nécessaire)
 X_test = X_test.tolist().toarray()
-y_test = np.load(get_data_path('y_test.npy'), allow_pickle=True)
+
 
 # Fonction de test
 def test_performance():
